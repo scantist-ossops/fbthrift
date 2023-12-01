@@ -161,7 +161,10 @@ public class TProtocolUtil {
         break;
       }
     default:
-      break;
+      {
+        throw new TProtocolException(
+              TProtocolException.INVALID_DATA, "Invalid type encountered during skipping: " + type);
+      }
     }
   }
 
